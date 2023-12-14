@@ -15,31 +15,18 @@
         <section id="data-display">
             <!-- Display part 1 data here -->
         </section>
+        <svg id="scatter-plot"></svg>
     </main>
     <header>
         <h1>Marcus Mariota</h1>
     </header>
-    <button onclick="showImage('completionPerQuarter.png')">Completion Percentage per Quarter</button>
-    <button onclick="showImage('passesCompletedPerDown.png')">Passes Completed per Down</button>
-    <button onclick="showImage('completion2minutes.png')">Completion Percentage Under 2 Minutes vs Not Under 2 Minutes</button>
-    <button onclick="showImage('completionPassDepth.png')">Completion Percentage Under 2 Minutes vs Not Under 2 Minutes</button>
-
-    <script>
-        // Function to display the selected image
-        function showImage(imagePath) {
-            // Get the image container
-            const imageContainer = document.getElementById('image-container');
-
-            // Create an image element
-            const imgElement = document.createElement('img');
-            imgElement.src = imagePath;
-            imgElement.alt = 'Selected Image';
-
-            // Clear the container and append the new image
-            imageContainer.innerHTML = '';
-            imageContainer.appendChild(imgElement);
-        }
-    </script>
+    <button onclick="showImage('completionPerQuarter.png')">Per Quarter Completion</button>
+    <button onclick="showImage('completionPerDown.png')">Per Down Completion</button>
+    <button onclick="showImage('completion2minutes.png')">Under 2 Minutes Completion</button>
+    <button onclick="showImage('completionPassDepth.png')">Pass Depth Completion</button>
+    <div id="image-container">
+        <!-- The selected image will be displayed here dynamically -->
+    </div>
 
     <footer>
         <p>Matthew Rundle 12/14/2023</p>

@@ -152,3 +152,18 @@ d3.csv("./TEN2018SeasonData.csv").then(function(data) {
     // Display the ordered list in the HTML element with ID "display1"
     document.getElementById('data-display').appendChild(resultList);
 });
+
+// Function to display the selected image
+function showImage(imagePath) {
+    // Get the image container
+    const imageContainer = document.getElementById('image-container');
+
+    // Create an image element
+    const imgElement = document.createElement('img');
+    imgElement.src = imagePath;
+    imgElement.alt = 'Selected Image';
+
+    // Clear the container and append the new image
+    imageContainer.innerHTML = '';
+    imageContainer.appendChild(imgElement);
+}
