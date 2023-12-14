@@ -2,6 +2,6 @@ fetch('/api/data')
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        // Use the data as needed in your frontend
+        document.getElementById('data-display').innerHTML = `<p>${data.message}</p>`;
     })
     .catch(error => console.error('Error:', error));
