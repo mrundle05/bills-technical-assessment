@@ -19,10 +19,27 @@
     <header>
         <h1>Marcus Mariota</h1>
     </header>
-    <img src="completionPerQuarter.png" alt="Completion Percentage per Quarter">
-    <img src="passesCompletedPerDown.png" alt="Passes Completed per Down">
-    <img src="completion2minutes.png" alt="Completion Percentage Under 2 Minutes vs Not Under 2 Minutes">
-    <img src="completionPassDepth.png" alt="Completion Percentage Under 2 Minutes vs Not Under 2 Minutes">
+    <button onclick="showImage('completionPerQuarter.png')">Completion Percentage per Quarter</button>
+    <button onclick="showImage('passesCompletedPerDown.png')">Passes Completed per Down</button>
+    <button onclick="showImage('completion2minutes.png')">Completion Percentage Under 2 Minutes vs Not Under 2 Minutes</button>
+    <button onclick="showImage('completionPassDepth.png')">Completion Percentage Under 2 Minutes vs Not Under 2 Minutes</button>
+
+    <script>
+        // Function to display the selected image
+        function showImage(imagePath) {
+            // Get the image container
+            const imageContainer = document.getElementById('image-container');
+
+            // Create an image element
+            const imgElement = document.createElement('img');
+            imgElement.src = imagePath;
+            imgElement.alt = 'Selected Image';
+
+            // Clear the container and append the new image
+            imageContainer.innerHTML = '';
+            imageContainer.appendChild(imgElement);
+        }
+    </script>
 
     <footer>
         <p>Matthew Rundle 12/14/2023</p>
