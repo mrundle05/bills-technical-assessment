@@ -1,0 +1,35 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00338D;
+}
+
+header {
+    background-color: #C60C30;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    padding: 20px;
+}
+
+#data-display {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #C60C30;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
