@@ -1,4 +1,4 @@
-fetch('/api/data')
+fetch('https://mrundle05.github.io/bills-technical-assessment/api/data')
     .then(response => response.json())
     .then(data => {
         console.log(data);
