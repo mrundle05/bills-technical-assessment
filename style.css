@@ -1,8 +1,9 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #00338D;
+    margin-bottom: 100px
 }
 
 header {
@@ -33,3 +34,20 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/*  Styles for the list items  */
+.game-list {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+.week_number{
+    margin-top: 4px;
+    margin-bottom: 4px; /* Adjust the value to control the space between week number and bullet points */
+}
+  
