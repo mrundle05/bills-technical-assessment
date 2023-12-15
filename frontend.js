@@ -113,14 +113,14 @@ d3.csv("./TEN2018SeasonData.csv").then(function(data) {
                 listItem.style.color = 'green';
                 listItem.innerHTML = `<p class=week_number>Week ${lastPlay.weeknumber}: Win vs. ${lastPlay.pff_OFFTEAM}</p>` +
                 `<ul>` +
-                `<li>Blitz Rate: ${lastPlay.blitzRate}%</li>` +
+                `<li>Blitz Rate: ${lastPlay.blitzRate}%<div class="blitz-rectangle" style="width:${lastPlay.blitzRate*40}px;"></div></li>` +
                 `<li>Turnover Differential: ${lastPlay.turnoverDifferential}</li>` +
                 `</ul>`;
             } else {
                 listItem.style.color = 'red';
                 listItem.innerHTML = `<p class=week_number>Week ${lastPlay.weeknumber}: Loss vs. ${lastPlay.pff_OFFTEAM}</p>` +
                                      `<ul>` +
-                                     `<li>Blitz Rate: ${lastPlay.blitzRate}%</li>` +
+                                     `<li>Blitz Rate: ${lastPlay.blitzRate}%<div class="blitz-rectangle" style="width:${lastPlay.blitzRate*40}px;"></div></li>` +
                                      `<li>Turnover Differential: ${lastPlay.turnoverDifferential}</li>` +
                                      `</ul>`;
             }
@@ -130,7 +130,7 @@ d3.csv("./TEN2018SeasonData.csv").then(function(data) {
                 listItem.style.color = 'green';
                 listItem.innerHTML = `<p class=week_number>Week ${lastPlay.weeknumber}: Win vs. ${lastPlay.pff_DEFTEAM}</p>` +
                                      `<ul>` +
-                                     `<li>Blitz Rate: ${lastPlay.blitzRate}%</li>` +
+                                     `<li>Blitz Rate: ${lastPlay.blitzRate}%<div class="blitz-rectangle" style="width:${lastPlay.blitzRate*40}px;"></div></li>` +
                                      `<li>Turnover Differential: ${lastPlay.turnoverDifferential}</li>` +
                                      `</ul>`;
             } 
@@ -138,7 +138,7 @@ d3.csv("./TEN2018SeasonData.csv").then(function(data) {
                 listItem.style.color = 'red';
                 listItem.innerHTML = `<p class=week_number>Week ${lastPlay.weeknumber}: Loss vs. ${lastPlay.pff_DEFTEAM}</p>` +
                                      `<ul>` +
-                                     `<li>Blitz Rate: ${lastPlay.blitzRate}%</li>` +
+                                     `<li>Blitz Rate: ${lastPlay.blitzRate}%<div class="blitz-rectangle" style="width:${lastPlay.blitzRate*40}px;"></div></li>` +
                                      `<li>Turnover Differential: ${lastPlay.turnoverDifferential}</li>` +
                                      `</ul>`;
             }

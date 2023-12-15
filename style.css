@@ -86,3 +86,11 @@ button:hover {
     color: white;
 
 }
+
+.blitz-rectangle {
+    position: absolute; 
+    height: 10px; 
+    background-color: #00338D; 
+    display: inline-block;
+    transform: translateX(10px); /* Translate the rectangle 10 pixels to the right */
+}
