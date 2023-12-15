@@ -61,6 +61,7 @@ labels = ['Under 2 Minutes', 'Not Under 2 Minutes']
 plt.bar(labels, completion_percentage.values, color='blue', label='Completion Percentage')
 plt.xlabel('Time Condition')
 plt.ylabel('Completion Percentage')
+plt.ylim(0, 100)
 plt.title('Completion Percentage Under 2 Minutes vs Not Under 2 Minutes')
 
 # Save the plot as an image file
@@ -79,14 +80,33 @@ labels = completion_rate_by_depth.index.astype(str)
 plt.bar(labels, completion_percentage.values, color='blue', label='Completion Percentage')
 plt.xlabel('Pass Depth Category')
 plt.ylabel('Completion Percentage')
+plt.ylim(0, 100)
 plt.title('Completion Percentage by Pass Depth Category')
 
 # Save the plot as an image file
 plt.savefig('completionPassDepth.png')
 plt.clf()
 
+# Create time-to-throw intervals
+bins = [0, 1.5, 3.0, float('inf')]
+labels = ['0-1.5', '1.5-3.0', '3.0+']
+ten_08_data['TimeToThrowInterval'] = pd.cut(ten_08_data['pff_TIMETOTHROW'], bins=bins, labels=labels, right=False)
+
+# Group data by time-to-throw interval and quarter, then calculate completion rate
+grouped_data = ten_08_data.groupby(['TimeToThrowInterval'])['pff_PASSRESULT'].value_counts(normalize=True).unstack().fillna(0)
+completion_percentage = grouped_data['COMPLETE'] / (grouped_data['COMPLETE'] + grouped_data['INCOMPLETE'] + grouped_data['BATTED PASS'] + grouped_data['INTERCEPTION']) * 100
+
+
+plt.bar(labels, completion_percentage.values, color='blue', label='Completion Percentage')
+plt.xlabel('Time to Throw Interval')
+plt.ylabel('Completion Percentage')
+plt.title('Completion Percentage per Time-to-Throw Interval')
+plt.ylim(0, 100)
+plt.savefig('completiontimetothrow.png')
+plt.clf()
+
 # Filter rows where pff_PASSER is 'TEN 08 (QB)' and the play resulted in a touchdown
-touchdowns = data[(data['pff_PASSER'] == 'TEN 08 (QB)') & (data['pff_TOUCHDOWN'].str[:3] == 'TEN')]
+touchdowns = data[(data['pff_PASSER'] == 'TEN 08 (QB)') & (data['pff_TOUCHDOWN'].str[:3] == 'TEN') & (data['pff_PASSRESULT'] == 'COMPLETE')]
 
 # Get the total number of touchdowns
 total_touchdowns = touchdowns.shape[0]
